@@ -1,0 +1,51 @@
+{
+  "name": "ipbus",
+  "version": "0.1.0",
+  "description": "A high performance interprocess message bus based on Publish/Subscribe pattern",
+  "main": "index.js",
+  "keywords": [
+    "bus",
+    "pubsub"
+  ],
+  "author": "Rustam Gaifiev <rustam.gaifiev@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "path-to-regexp": "^6.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-typescript": "^7.10.1",
+    "@rollup/plugin-node-resolve": "^8.0.1",
+    "@rollup/plugin-typescript": "^4.1.1",
+    "@types/jest": "^26.0.0",
+    "@types/node": "^14.0.13",
+    "jest": "^26.0.1",
+    "rollup": "^2.18.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "ts-jest": "^26.1.1",
+    "tslint": "^6.1.2",
+    "tslint-eslint-rules": "^5.0.0",
+    "typescript": "^3.9.5"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "tslint --project ./tsconfig.json --config ./tslint.json --format verbose",
+    "fixlint": "tslint --project ./tsconfig.json --config ./tslint.json --format verbose --fix",
+    "build": "rollup -c rollup.config.js",
+    "build:release": "rollup -c rollup.config.release.js"
+  },
+  "jest": {
+    "testRegex": "(/test/.*\\.spec\\.[tj]s)$",
+    "collectCoverage": true,
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
+  }
+}
